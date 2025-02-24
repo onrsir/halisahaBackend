@@ -1,8 +1,11 @@
 com/halisaha/payment/client/UserClient.class
+com/halisaha/payment/client/PaymentStatusRequest.class
 com/halisaha/payment/repository/PaymentRepository.class
 com/halisaha/payment/client/ReservationClient.class
 com/halisaha/payment/model/Payment.class
 com/halisaha/payment/model/PaymentStatus.class
+com/halisaha/payment/client/ReservationServiceClient.class
 com/halisaha/payment/service/PaymentService.class
 com/halisaha/payment/PaymentServiceApplication.class
 com/halisaha/payment/controller/PaymentController.class
+com/halisaha/payment/client/ReservationResponse.class

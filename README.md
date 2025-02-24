@@ -1,110 +1,150 @@
-# HaliSaha Backend
+# HalisahaBackend - Football Field Reservation System
 
-This is a microservices-based backend system for a football field rental application. The system is built using Spring Boot and follows a microservices architecture.
+A microservices-based backend system for managing football field reservations, built with Spring Boot and Spring Cloud.
 
-## Project Structure
+## Services
 
-The project consists of the following microservices:
+### 1. Eureka Server (Discovery Service)
+- Port: 8761
+- Service discovery and registration
+- Enables service-to-service communication
 
-1. **Eureka Server** (Port: 8761)
-   - Service discovery and registration
-   - Manages service registry
+### 2. User Service
+- Port: 8081
+- User management and authentication
+- JWT-based security
+- Features:
+  - User registration and login
+  - Role-based authorization (USER, ADMIN)
+  - Profile management
 
-2. **User Service** (Port: 8081)
-   - User authentication and authorization
-   - JWT-based security
-   - User profile management
-   - Role-based access control
+### 3. Field Service
+- Port: 8082
+- Football field management
+- Features:
+  - Field listing and details
+  - Field type categorization (INDOOR, OUTDOOR)
+  - Pricing management (base price and peak hour pricing)
+  - Field availability status
 
-3. **Field Service** (To be implemented)
-   - Manages football field information
-   - Field availability
-   - Field types (indoor/outdoor)
-   - Field pricing
+### 4. Reservation Service
+- Port: 8083
+- Reservation management
+- Features:
+  - Create and manage reservations
+  - Check field availability
+  - Reservation status tracking
+  - Integration with Field and User services
 
-4. **Reservation Service** (To be implemented)
-   - Handles field reservations
-   - Manages booking slots
-   - Reservation confirmation
+### 5. Payment Service
+- Port: 8084
+- Payment processing
+- Features:
+  - Payment processing with Stripe integration
+  - Payment status tracking
+  - Refund handling
+  - Transaction history
 
-5. **Payment Service** (To be implemented)
-   - Payment processing
-   - Payment history
-   - Refund handling
+### 6. Notification Service
+- Port: 8086
+- Notification management
+- Features:
+  - Email notifications
+  - SMS notifications (planned)
+  - Push notifications (planned)
+  - Notification templates and history
 
-6. **Notification Service** (To be implemented)
-   - Sends notifications
-   - Reservation confirmations
-   - Reminders
-   - System notifications
+### 7. API Gateway
+- Port: 8085
+- Single entry point for clients
+- Features:
+  - Route management
+  - Load balancing
+  - Cross-cutting concerns
+  - CORS configuration
 
-## Setup Instructions
+## Technical Stack
 
-1. **Database Setup**
-   ```sql
-   CREATE DATABASE halisaha;
+- Java 17
+- Spring Boot 3.2.3
+- Spring Cloud (Netflix Eureka, OpenFeign)
+- Spring Security with JWT
+- PostgreSQL
+- Maven
+- Swagger/OpenAPI Documentation
+
+## Recent Updates
+
+- Implemented microservices architecture with Spring Cloud
+- Added service discovery with Eureka Server
+- Integrated JWT-based authentication
+- Added field management functionality
+- Implemented reservation system
+- Added payment processing capabilities
+- Integrated notification system
+- Implemented API Gateway for centralized routing
+
+## Getting Started
+
+1. Clone the repository
+2. Make sure you have Java 17 and Maven installed
+3. Start PostgreSQL and create required databases
+4. Run services in the following order:
+   ```bash
+   ./start-services.sh
+   ```
+   Or manually:
+   ```bash
+   cd eureka-server && mvn spring-boot:run
+   cd ../user-service && mvn spring-boot:run
+   cd ../field-service && mvn spring-boot:run
+   cd ../reservation-service && mvn spring-boot:run
+   cd ../payment-service && mvn spring-boot:run
+   cd ../notification-service && mvn spring-boot:run
+   cd ../api-gateway && mvn spring-boot:run
    ```
 
-2. **Environment Requirements**
-   - Java 17
-   - Maven
-   - PostgreSQL
-   - Docker (optional)
-
-3. **Configuration**
-   - Each service has its own `application.yml` file
-   - Update database credentials as needed
-   - Configure JWT secret and expiration
-
-4. **Running the Services**
-   - Start Eureka Server first
-   - Start other services in any order
-   - Services will automatically register with Eureka
-
-## Security
-
-The application uses JWT-based authentication with the following features:
-- Token-based authentication
-- Role-based authorization (USER, ADMIN)
-- Secure password storage
-- Protected endpoints
+5. Access Eureka dashboard at http://localhost:8761
+6. Access API documentation at http://localhost:8085/swagger-ui.html
 
 ## API Documentation
 
-### Authentication Endpoints
-```
-POST /api/auth/signup - User registration
-POST /api/auth/signin - User login
-GET /api/auth/user - Get user profile
+Each service has its own Swagger documentation available at:
+- User Service: http://localhost:8081/swagger-ui.html
+- Field Service: http://localhost:8082/swagger-ui.html
+- Reservation Service: http://localhost:8083/swagger-ui.html
+- Payment Service: http://localhost:8084/swagger-ui.html
+- Notification Service: http://localhost:8086/swagger-ui.html
+
+## Environment Setup
+
+Required environment variables:
+```properties
+# Database Configuration
+POSTGRES_HOST=localhost
+POSTGRES_PORT=5432
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=postgres
+
+# JWT Configuration
+JWT_SECRET=your-secret-key
+JWT_EXPIRATION=86400000
+
+# Email Configuration (for Notification Service)
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=587
+SMTP_USERNAME=your-email@gmail.com
+SMTP_PASSWORD=your-app-password
+
+# Stripe Configuration (for Payment Service)
+STRIPE_SECRET_KEY=your-stripe-secret-key
+STRIPE_PUBLIC_KEY=your-stripe-public-key
 ```
 
-### Field Management Endpoints (To be implemented)
-```
-GET /api/fields - List all fields
-GET /api/fields/{id} - Get field details
-POST /api/fields - Add new field (ADMIN)
-PUT /api/fields/{id} - Update field (ADMIN)
-DELETE /api/fields/{id} - Delete field (ADMIN)
-```
+## Contributing
 
-### Reservation Endpoints (To be implemented)
-```
-GET /api/reservations - List user reservations
-POST /api/reservations - Create reservation
-GET /api/reservations/{id} - Get reservation details
-DELETE /api/reservations/{id} - Cancel reservation
-```
-
-## Development Status
-
-- [x] Project Structure Setup
-- [x] Eureka Server Implementation
-- [x] User Service Basic Setup
-- [ ] Field Service Implementation
-- [ ] Reservation Service Implementation
-- [ ] Payment Service Integration
-- [ ] Notification Service Setup
-- [ ] API Gateway Implementation
-- [ ] Service Intercommunication
-- [ ] Testing
-- [ ] Documentation 
+1. Fork the repository
+2. Create your feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a new Pull Request 

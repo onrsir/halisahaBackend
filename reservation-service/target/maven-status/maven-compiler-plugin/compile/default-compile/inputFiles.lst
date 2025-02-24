@@ -2,7 +2,9 @@
 /Users/admin/Documents/halisaha/reservation-service/src/main/java/com/halisaha/reservation/repository/ReservationRepository.java
 /Users/admin/Documents/halisaha/reservation-service/src/main/java/com/halisaha/reservation/controller/ReservationController.java
 /Users/admin/Documents/halisaha/reservation-service/src/main/java/com/halisaha/reservation/ReservationServiceApplication.java
+/Users/admin/Documents/halisaha/reservation-service/src/main/java/com/halisaha/reservation/client/FieldServiceClient.java
 /Users/admin/Documents/halisaha/reservation-service/src/main/java/com/halisaha/reservation/client/UserClient.java
 /Users/admin/Documents/halisaha/reservation-service/src/main/java/com/halisaha/reservation/service/ReservationService.java
 /Users/admin/Documents/halisaha/reservation-service/src/main/java/com/halisaha/reservation/model/ReservationStatus.java
 /Users/admin/Documents/halisaha/reservation-service/src/main/java/com/halisaha/reservation/client/FieldClient.java
+/Users/admin/Documents/halisaha/reservation-service/src/main/java/com/halisaha/reservation/client/UserServiceClient.java

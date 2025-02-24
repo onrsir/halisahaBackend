@@ -1,6 +1,7 @@
 /Users/admin/Documents/halisaha/payment-service/src/main/java/com/halisaha/payment/model/Payment.java
 /Users/admin/Documents/halisaha/payment-service/src/main/java/com/halisaha/payment/service/PaymentService.java
 /Users/admin/Documents/halisaha/payment-service/src/main/java/com/halisaha/payment/PaymentServiceApplication.java
+/Users/admin/Documents/halisaha/payment-service/src/main/java/com/halisaha/payment/client/ReservationServiceClient.java
 /Users/admin/Documents/halisaha/payment-service/src/main/java/com/halisaha/payment/client/UserClient.java
 /Users/admin/Documents/halisaha/payment-service/src/main/java/com/halisaha/payment/repository/PaymentRepository.java
 /Users/admin/Documents/halisaha/payment-service/src/main/java/com/halisaha/payment/client/ReservationClient.java
