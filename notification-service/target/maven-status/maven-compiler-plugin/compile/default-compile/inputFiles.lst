@@ -1,0 +1,9 @@
+/Users/admin/Documents/halisaha/notification-service/src/main/java/com/halisaha/notification/model/Notification.java
+/Users/admin/Documents/halisaha/notification-service/src/main/java/com/halisaha/notification/model/NotificationChannel.java
+/Users/admin/Documents/halisaha/notification-service/src/main/java/com/halisaha/notification/service/NotificationService.java
+/Users/admin/Documents/halisaha/notification-service/src/main/java/com/halisaha/notification/model/NotificationType.java
+/Users/admin/Documents/halisaha/notification-service/src/main/java/com/halisaha/notification/repository/NotificationRepository.java
+/Users/admin/Documents/halisaha/notification-service/src/main/java/com/halisaha/notification/client/UserClient.java
+/Users/admin/Documents/halisaha/notification-service/src/main/java/com/halisaha/notification/NotificationServiceApplication.java
+/Users/admin/Documents/halisaha/notification-service/src/main/java/com/halisaha/notification/config/AsyncConfig.java
+/Users/admin/Documents/halisaha/notification-service/src/main/java/com/halisaha/notification/controller/NotificationController.java

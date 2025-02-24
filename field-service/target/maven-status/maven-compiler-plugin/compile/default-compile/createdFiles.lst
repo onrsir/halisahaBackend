@@ -1,0 +1,6 @@
+com/halisaha/field/model/Field.class
+com/halisaha/field/service/FieldService.class
+com/halisaha/field/FieldServiceApplication.class
+com/halisaha/field/repository/FieldRepository.class
+com/halisaha/field/model/FieldType.class
+com/halisaha/field/controller/FieldController.class
