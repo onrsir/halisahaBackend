@@ -31,6 +31,7 @@
         <module>reservation-service</module>
         <module>payment-service</module>
         <module>notification-service</module>
+        <module>common-lib</module>
     </modules>
 
     <dependencyManagement>
@@ -65,12 +66,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <excludes>
-                        <exclude>
-                            <groupId>org.projectlombok</groupId>
-                            <artifactId>lombok</artifactId>
-                        </exclude>
-                    </excludes>
+                    <skip>true</skip>
                 </configuration>
             </plugin>
             <plugin>

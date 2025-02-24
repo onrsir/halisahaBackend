@@ -27,3 +27,9 @@ halisaha:
   app:
     jwtSecret: halisahaSecretKey
     jwtExpirationMs: 86400000 # 24 hours 
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+  api-docs:
+    path: /v3/api-docs 
